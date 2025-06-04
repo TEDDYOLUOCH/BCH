@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Box Model Practice</title>
+  <style>
+    * {
+      box-sizing: border-box; /* Apply globally to see effect */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border: 2px solid #ccc;
+    }
+
+    .box {
+      margin: 15px;
+      padding: 20px;
+      border: 3px solid;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .box1 {
+      width: 300px;
+      height: 100px;
+      background-color: #3498db;
+      border-color: #2980b9;
+      border-style: solid;
+    }
+
+    .box2 {
+      width: 250px;
+      height: 120px;
+      background-color: #e67e22;
+      border-color: #d35400;
+      border-style: dashed;
+      padding: 30px;
+      margin-left: 50px;
+    }
+
+    .box3 {
+      width: 200px;
+      height: 90px;
+      background-color: #2ecc71;
+      border-color: #27ae60;
+      border-style: dotted;
+      padding: 10px 40px;
+      margin-top: 40px;
+    }
+
+    /* Try toggling this on/off to see the difference */
+    /* .box {
+      box-sizing: content-box;
+    } */
+  </style>
+</head>
+<body>
+  <h1>CSS Box Model Practice</h1>
+  <div class="container">
+    <div class="box box1">Box 1: Solid Border</div>
+    <div class="box box2">Box 2: Dashed Border with More Padding</div>
+    <div class="box box3">Box 3: Dotted Border with Horizontal Padding</div>
+  </div>
+</body>
+</html>
