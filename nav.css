@@ -20,9 +20,12 @@ body {
 }
 
 /* Logo */
-.logo h1 {
-  font-size: 1.5rem;
-  color: #fff;
+.logo img{
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 5px;
+
 }
 
 /* Navigation links */
@@ -38,8 +41,10 @@ body {
 .nav-links li a {
   text-decoration: none;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding-left: 2rem;
   transition: background 0.3s;
+  float: left;
+  text-align: center;
 }
 
 .nav-links li a:hover {
