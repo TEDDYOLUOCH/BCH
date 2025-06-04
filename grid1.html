@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Grid Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "main"
+        "sidebar"
+        "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto auto;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    main {
+      grid-area: main;
+      background-color: #ffffff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    aside {
+      grid-area: sidebar;
+      background-color: #e9ecef;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #343a40;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    /* Tablet layout */
+    @media (min-width: 600px) {
+      .grid-container {
+        grid-template-areas:
+          "header header"
+          "main sidebar"
+          "footer footer";
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    /* Desktop layout */
+    @media (min-width: 900px) {
+      .grid-container {
+        grid-template-areas:
+          "header header header"
+          "main main sidebar"
+          "footer footer footer";
+        grid-template-columns: 2fr 2fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <header>
+      <h1>My Website</h1>
+    </header>
+
+    <main>
+      <h2>Main Content</h2>
+      <p>This is the main content area. It expands on wider screens and is the primary section of the layout.</p>
+    </main>
+
+    <aside>
+      <h3>Sidebar</h3>
+      <p>Sidebar with extra content or links.</p>
+    </aside>
+
+    <footer>
+      <p>&copy; 2025 My Website. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
