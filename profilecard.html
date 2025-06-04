@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styled Page Example</title>
+  <style>
+    /* Element selector */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    /* Class selector */
+    .highlight {
+      background-color: #e0f7fa;
+      padding: 15px;
+      border-left: 5px solid #00796b;
+      margin-bottom: 20px;
+    }
+
+    .note {
+      font-style: italic;
+      color: #6a1b9a;
+      background-color: #f3e5f5;
+      padding: 10px;
+      border: 1px dashed #ba68c8;
+    }
+
+    /* ID selector */
+    #main-content {
+      background-color: #ffffff;
+      border: 2px solid #ccc;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .box {
+      margin-top: 20px;
+      border: 2px solid #2196f3;
+      padding: 20px;
+      background-color: #e3f2fd;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to My Styled HTML Page</h1>
+
+  <div id="main-content">
+    <h2>About This Page</h2>
+    <p>This page demonstrates the use of various CSS selectors and styles to create a clean and structured layout.</p>
+
+    <div class="highlight">
+      <h3>Highlight Section</h3>
+      <p>This section uses a <strong>class selector</strong> to stand out with a different background and border.</p>
+    </div>
+
+    <p class="note">Note: This is an important tip styled using another class selector.</p>
+
+    <div class="box">
+      <h3>Another Box</h3>
+      <p>This <code>div</code> uses custom margins, padding, and a solid blue border.</p>
+    </div>
+  </div>
+
+</body>
+</html>
