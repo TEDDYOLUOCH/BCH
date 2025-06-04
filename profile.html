@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile Card</title>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .profile-card {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      max-width: 350px;
+      text-align: center;
+      padding: 30px 20px;
+      transition: transform 0.3s;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #4f46e5;
+    }
+
+    .profile-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .bio {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .stats div {
+      padding: 5px 10px;
+    }
+
+    .stats-title {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <img class="profile-image" src="myphoto.png" alt="Profile Picture">
+    <div class="profile-name">Teddy Oluoch</div>
+    <div class="bio">
+     A pasionate web developer fostering to build website solutions to the real world.
+    </div>
+    <div class="stats">
+      <div>
+        <div class="stats-title">Age</div>
+        28
+      </div>
+      <div>
+        <div class="stats-title">Job</div>
+        Web Developer
+      </div>
+      <div>
+        <div class="stats-title">Hobby</div>
+         Coding and Programming
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
