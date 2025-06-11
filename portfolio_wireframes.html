@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .wireframe-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .wireframe-header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .wireframe-header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .wireframe-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #34495e;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .device-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .device-wireframe {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .device-wireframe:hover {
+            transform: translateY(-5px);
+        }
+
+        .device-header {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .wireframe-content {
+            padding: 20px;
+        }
+
+        /* Desktop Wireframe */
+        .desktop-wireframe {
+            min-height: 600px;
+        }
+
+        .nav-bar {
+            height: 60px;
+            background: #ecf0f1;
+            border: 2px dashed #bdc3c7;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo-placeholder {
+            width: 100px;
+            height: 30px;
+            background: #3498db;
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            width: 60px;
+            height: 20px;
+            background: #95a5a6;
+            border-radius: 3px;
+        }
+
+        .hero-section {
+            height: 300px;
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            background: #e74c3c;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 3px dashed #c0392b;
+        }
+
+        .hero-text {
+            background: #3498db;
+            height: 30px;
+            width: 200px;
+            margin: 10px auto;
+            border-radius: 4px;
+        }
+
+        .hero-subtext {
+            background: #95a5a6;
+            height: 20px;
+            width: 150px;
+            margin: 10px auto;
+            border-radius: 3px;
+        }
+
+        .cta-button {
+            background: #2ecc71;
+            height: 40px;
+            width: 120px;
+            margin: 20px auto;
+            border-radius: 6px;
+            border: 2px dashed #27ae60;
+        }
+
+        .content-section {
+            background: #ffffff;
+            border: 2px dashed #bdc3c7;
+            margin-bottom: 20px;
+            padding: 30px;
+            min-height: 200px;
+        }
+
+        .section-header {
+            background: #34495e;
+            height: 40px;
+            width: 150px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .content-card {
+            background: #ecf0f1;
+            border: 2px dashed #bdc3c7;
+            height: 150px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .card-title {
+            background: #3498db;
+            height: 20px;
+            width: 80%;
+            margin-bottom: 10px;
+            border-radius: 3px;
+        }
+
+        .card-content {
+            background: #95a5a6;
+            height: 15px;
+            width: 100%;
+            margin-bottom: 8px;
+            border-radius: 2px;
+        }
+
+        /* Tablet Wireframe */
+        .tablet-wireframe {
+            min-height: 500px;
+        }
+
+        .tablet-wireframe .nav-bar {
+            height: 50px;
+        }
+
+        .tablet-wireframe .hero-section {
+            height: 250px;
+        }
+
+        .tablet-wireframe .content-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* Mobile Wireframe */
+        .mobile-wireframe {
+            min-height: 600px;
+        }
+
+        .mobile-nav {
+            height: 50px;
+            background: #ecf0f1;
+            border: 2px dashed #bdc3c7;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            background: #34495e;
+            border-radius: 3px;
+        }
+
+        .mobile-wireframe .hero-section {
+            height: 200px;
+        }
+
+        .mobile-wireframe .profile-image {
+            width: 80px;
+            height: 80px;
+        }
+
+        .mobile-wireframe .content-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .mobile-wireframe .content-card {
+            height: 120px;
+        }
+
+        .flow-diagram {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+
+        .flow-step {
+            background: #3498db;
+            color: white;
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 25px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .flow-arrow {
+            color: #34495e;
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+
+        .annotations {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .annotation-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .annotation-list {
+            list-style: none;
+        }
+
+        .annotation-list li {
+            padding: 5px 0;
+            border-left: 3px solid #f39c12;
+            padding-left: 10px;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .device-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .wireframe-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .detailed-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .component-wireframe {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            background: #f8f9fa;
+        }
+
+        .component-title {
+            background: #495057;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <div class="wireframe-header">
+            <h1>Portfolio Website Wireframes</h1>
+            <p>Comprehensive wireframe designs for Personal Portfolio Website</p>
+            <p><strong>Developer:</strong> Teddy Oluoch | <strong>Date:</strong> June 6, 2025</p>
+        </div>
+
+        <!-- Overall Layout Comparison -->
+        <div class="wireframe-section">
+            <h2 class="section-title">📱 📊 🖥️ Responsive Layout Overview</h2>
+            
+            <div class="device-comparison">
+                <!-- Desktop Wireframe -->
+                <div class="device-wireframe desktop-wireframe">
+                    <div class="device-header">🖥️ Desktop (1024px+)</div>
+                    <div class="wireframe-content">
+                        <div class="nav-bar">
+                            <div class="logo-placeholder"></div>
+                            <div class="nav-links">
+                                <div class="nav-link"></div>
+                                <div class="nav-link"></div>
+                                <div class="nav-link"></div>
+                                <div class="nav-link"></div>
+                                <div class="nav-link"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-section">
+                            <div class="hero-content">
+                                <div class="profile-image"></div>
+                                <div class="hero-text"></div>
+                                <div class="hero-subtext"></div>
+                                <div class="cta-button"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="content-section">
+                            <div class="section-header"></div>
+                            <div class="content-grid">
+                                <div class="content-card">
+                                    <div class="card-title"></div>
+                                    <div class="card-content"></div>
+                                    <div class="card-content"></div>
+                                </div>
+                                <div class="content-card">
+                                    <div class="card-title"></div>
+                                    <div class="card-content"></div>
+                                    <div class="card-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="annotations">
+                <div class="annotation-title">📋 Layout Annotations:</div>
+                <ul class="annotation-list">
+                    <li><strong>Desktop:</strong> Full horizontal navigation, 3-column content grid, maximum content visibility</li>
+                    <li><strong>Tablet:</strong> Condensed navigation, 2-column grid, optimized for touch interaction</li>
+                    <li><strong>Mobile:</strong> Hamburger menu, single column layout, thumb-friendly touch targets</li>
+                    <li><strong>Progressive Enhancement:</strong> Each breakpoint builds upon the previous with enhanced features</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Detailed Section Wireframes -->
+        <div class="wireframe-section">
+            <h2 class="section-title">🎯 Detailed Section Wireframes</h2>
+            
+            <!-- Hero Section -->
+            <div class="detailed-section">
+                <h3 style="color: #2c3e50; margin-bottom: 20px;">🏠 Hero/Landing Section</h3>
+                
+                <div class="component-wireframe">
+                    <div class="component-title">Desktop Hero Section</div>
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; align-items: center;">
+                        <div>
+                            <div class="profile-image" style="width: 200px; height: 200px; margin: 0;"></div>
+                        </div>
+                        <div>
+                            <div style="background: #2c3e50; height: 40px; width: 300px; margin-bottom: 15px; border-radius: 4px;"></div>
+                            <div style="background: #34495e; height: 25px; width: 250px; margin-bottom: 15px; border-radius: 3px;"></div>
+                            <div style="background: #7f8c8d; height: 60px; width: 400px; margin-bottom: 20px; border-radius: 4px;"></div>
+                            <div style="display: flex; gap: 15px;">
+                                <div style="background: #3498db; height: 45px; width: 140px; border-radius: 6px;"></div>
+                                <div style="background: transparent; border: 2px solid #3498db; height: 45px; width: 140px; border-radius: 6px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-wireframe">
+                    <div class="component-title">Mobile Hero Section</div>
+                    <div style="text-align: center;">
+                        <div class="profile-image" style="width: 150px; height: 150px; margin: 0 auto 20px;"></div>
+                        <div style="background: #2c3e50; height: 35px; width: 250px; margin: 0 auto 15px; border-radius: 4px;"></div>
+                        <div style="background: #34495e; height: 20px; width: 200px; margin: 0 auto 15px; border-radius: 3px;"></div>
+                        <div style="background: #7f8c8d; height: 80px; width: 280px; margin: 0 auto 20px; border-radius: 4px;"></div>
+                        <div style="background: #3498db; height: 50px; width: 160px; margin: 0 auto; border-radius: 6px;"></div>
+                    </div>
+                </div>
+
+                <div class="annotations">
+                    <div class="annotation-title">Hero Section Requirements:</div>
+                    <ul class="annotation-list">
+                        <li>Professional headshot/avatar (optimized for web)</li>
+                        <li>Name and current title/role</li>
+                        <li>Brief compelling tagline or value proposition</li>
+                        <li>Primary CTA button (Contact/Download CV)</li>
+                        <li>Secondary CTA button (View Work/Projects)</li>
+                        <li>Social media quick links</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="detailed-section">
+                <h3 style="color: #2c3e50; margin-bottom: 20px;">👤 About Section</h3>
+                
+                <div class="component-wireframe">
+                    <div class="component-title">About Section Layout</div>
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                        <div>
+                            <div style="background: #2c3e50; height: 35px; width: 120px; margin-bottom: 20px; border-radius: 4px;"></div>
+                            <div style="background: #ecf0f1; height: 150px; width: 100%; margin-bottom: 20px; border-radius: 6px; border: 2px dashed #bdc3c7;"></div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div>
+                                    <div style="background: #3498db; height: 25px; width: 100px; margin-bottom: 10px; border-radius: 3px;"></div>
+                                    <div style="background: #95a5a6; height: 15px; width: 100%; margin-bottom: 5px; border-radius: 2px;"></div>
+                                    <div style="background: #95a5a6; height: 15px; width: 80%; margin-bottom: 5px; border-radius: 2px;"></div>
+                                </div>
+                                <div>
+                                    <div style="background: #3498db; height: 25px; width: 100px; margin-bottom: 10px; border-radius: 3px;"></div>
+                                    <div style="background: #95a5a6; height: 15px; width: 100%; margin-bottom: 5px; border-radius: 2px;"></div>
+                                    <div style="background: #95a5a6; height: 15px; width: 90%; margin-bottom: 5px; border-radius: 2px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="background: #f39c12; height: 200px; width: 100%; border-radius: 8px; border: 2px dashed #e67e22; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Personal Image or Infographic
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="annotations">
+                    <div class="annotation-title">About Section Content:</div>
+                    <ul class="annotation-list">
+                        <li>2-3 paragraph professional biography</li>
+                        <li>Career objectives and aspirations</li>
+                        <li>Personal interests and values</li>
+                        <li>Key achievements or milestones</li>
+                        <li>Supporting visual element (photo, infographic, or illustration)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="detailed-section">
+                <h3 style="color: #2c3e50; margin-bottom: 20px;">⚡ Skills Section</h3>
+                
+                <div class="component-wireframe">
+                    <div class="component-title">Skills Grid Layout</div>
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <div style="background: #2c3e50; height: 35px; width: 150px; margin: 0 auto 10px; border-radius: 4px;"></div>
+                        <div style="background: #7f8c8d; height: 20px; width: 300px; margin: 0 auto; border-radius: 3px;"></div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 30px;">
+                        <div>
+                            <div style="background: #3498db; height: 30px; width: 100%; margin-bottom: 15px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Technical Skills
+                            </div>
+                            <div style="display: grid; gap: 10px;">
+                                <div style="background: #ecf0f1; height: 40px; border-radius: 20px; border: 2px dashed #bdc3c7; display: flex; align-items: center; padding: 0 15px;">
+                                    <div style="background: #2ecc71; height: 20px; width: 60%; border-radius: 10px;"></div>
+                                </div>
+                                <div style="background: #ecf0f1; height: 40px; border-radius: 20px; border: 2px dashed #bdc3c7; display: flex; align-items: center; padding: 0 15px;">
+                                    <div style="background: #2ecc71; height: 20px; width: 80%; border-radius: 10px;"></div>
+                                </div>
+                                <div style="background: #ecf0f1; height: 40px; border-radius: 20px; border: 2px dashed #bdc3c7; display: flex; align-items: center; padding: 0 15px;">
+                                    <div style="background: #2ecc71; height: 20px; width: 70%; border-radius: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div style="background: #e74c3c; height: 30px; width: 100%; margin-bottom: 15px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Frameworks & Tools
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                                <div style="background: #ecf0f1; height: 50px; border-radius: 8px; border: 2px dashed #bdc3c7;"></div>
+                                <div style="background: #ecf0f1; height: 50px; border-radius: 8px; border: 2px dashed #bdc3c7;"></div>
+                                <div style="background: #ecf0f1; height: 50px; border-radius: 8px; border: 2px dashed #bdc3c7;"></div>
+                                <div style="background: #ecf0f1; height: 50px; border-radius: 8px; border: 2px dashed #bdc3c7;"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div style="background: #f39c12; height: 30px; width: 100%; margin-bottom: 15px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                Soft Skills
+                            </div>
+                            <div style="display: grid; gap: 8px;">
+                                <div style="background: #ecf0f1; height: 30px; border-radius: 15px; border: 2px dashed #bdc3c7;"></div>
+                                <div style="background: #ecf0f1; height: 30px; border-radius: 15px; border: 2px dashed #bdc3c7;"></div>
+                                <div style="background: #ecf0f1; height: 30px; border-radius: 15px; border: 2px dashed #bdc3c7;"></div>
+                                <div style="background: #ecf0f1; height: 30px; border-radius: 15px; border: 2px dashed #bdc3c7;"></div>
+                                <div style="background: #ecf0f1; height: 30px; border-radius: 15px; border: 2px dashed #bdc3c7;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="annotations">
+                    <div class="annotation-title">Skills Section Features:</div>
+                    <ul class="annotation-list">
+                        <li>Categorized skill groups (Technical, Tools/Frameworks, Soft Skills)</li>
+                        <li>Visual proficiency indicators (progress bars, ratings, or badges)</li>
+                        <li>Interactive hover effects for enhanced engagement</li>
+                        <li>Responsive grid that adapts to screen size</li>
+                        <li>Clear visual hierarchy and grouping</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="detailed-section">
+                <h3 style="color: #2c3e50; margin-bottom: 20px;">💼 Projects Section</h3>
+                
+                <div class="component-wireframe">
+                    <div class="component-title">Projects Gallery Layout</div>
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <div style="background: #2c3e50; height: 35px; width: 180px; margin: 0 auto 10px; border-radius: 4px;"></div>
+                        <div style="background: #7f8c8d; height: 20px; width: 350px; margin: 0 auto; border-radius: 3px;"></div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
+                        <!-- Featured Project -->
+                        <div style="grid-column: span 2; background: #f8f9fa; border: 2px dashed #dee2e6; border-radius: 12px; padding: 30px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
+                                <div>
+                                    <div style="background: #e74c3c; height: 25px; width: 120px; margin-bottom: 15px; border-radius: 4px;"></div>
+                                    <div style="background: #2c3e50; height: 35px; width: 250px; margin-bottom: 15px; border-radius: 4px;"></div>
+                                    <div style="background: #7f8c8d; height: 80px; width: 100%; margin-bottom: 20px; border-radius: 4px;"></div>
+                                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                                        <div style="background: #3498db; height: 25px; width: 60px; border-radius: 12px;"></div>
+                                        <div style="background: #2ecc71; height: 25px; width: 60px; border-radius: 12px;"></div>
+                                        <div style="background: #f39c12; height: 25px; width: 60px; border-radius: 12px;"></div>
+                                    </div>
+                                    <div style="display: flex; gap: 15px;">
+                                        <div style="background: #3498db; height: 35px; width: 100px; border-radius: 6px;"></div>
+                                        <div style="background: transparent; border: 2px solid #3498db; height: 35px; width: 100px; border-radius: 6px;"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="background: #95a5a6; height: 200px; width: 100%; border-radius: 8px; border: 2px dashed #7f8c8d; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                        Project Screenshot
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Regular Project Cards -->
+                        <div style="background: #ffffff; border: 2px dashed #dee2e6; border-radius: 12px; padding: 25px;">
+                            <div style="background: #95a5a6; height: 120px; width: 100%; border-radius: 8px; margin-bottom: 15px; border: 2px dashed #7f8c8d;"></div>
+                            <div style="background: #2c3e50; height: 25px; width: 180px; margin-bottom: 10px; border-radius: 4px;"></div>
+                            <div style="background: #7f8c8d; height: 60px; width: 100%; margin-bottom: 15px; border-radius: 4px;"></div>
+                            <div style="display: flex; gap: 5px; margin-bottom: 15px;">
+                                <div style="background: #3498db; height: 20px; width: 50px; border-radius: 10px;"></div>
+                                <div style="background: #2ecc71; height: 20px; width: 50px; border-radius: 10px;"></div>
+                            </div>
+                            <div style="background: #3498db; height: 30px; width: 80px; border-radius: 6px;"></div>
+                        </div>
+                        
+                        <div style="background: #ffffff; border: 2px dashed #dee2e6; border-radius: 12px; padding: 25px;">
+                            <div style="background: #95a5a6; height: 120px; width: 100%; border-radius: 8px; margin-bottom: 15px; border: 2px dashed #7f8c8d;"></div>
+                            <div style="background: #2c3e50; height: 25px; width: 180px; margin-bottom: 10px; border-radius: 4px;"></div>
+                            <div style="background: #7f8c8d; height: 60px; width: 100%; margin-bottom: 15px; border-radius: 4px;"></div>
+                            <div style="display: flex; gap: 5px; margin-bottom: 15px;">
+                                <div style="background: #e74c3c; height: 20px; width: 50px; border-radius: 10px;"></div>
+                                <div style="background: #f39c12; height: 20px; width: 50px; border-radius: 10px;"></div>
+                            </div>
+                            <div style="background: #3498db; height: 30px; width: 80px; border-radius: 6px;"></div>
+                        </div>
+                        
+                        <div style="background: #ffffff; border: 2px dashed #dee2e6; border-radius: 12px; padding: 25px;">
+                            <div style="background: #95a5a6; height: 120px; width: 100%; border-radius: 8px; margin-bottom: 15px; border: 2px dashed #7f8c8d;"></div>
+                            <div style="background: #2c3e50; height: 25px; width: 180px; margin-bottom: 10px; border-radius: 4px;"></div>
+                            <div style="background: #7f8c8d; height: 60px; width: 100%; margin-bottom: 15px; border-radius: 4px;"></div>
+                            <div style="display: flex; gap: 5px; margin-bottom: 15px;">
+                                <div style="background: #9b59b6; height: 20px; width: 50px; border-radius: 10px;"></div>
+                                <div style="background: #1abc9c; height: 20px; width: 50px; border-radius: 10px;"></div>
+                            </div>
+                            <div style="background: #3498db; height: 30px; width: 80px; border-radius: 6px;"></div>
+                        </div>
+                        
+                        <div style="background: #ffffff; border: 2px dashed #dee2e6; border-radius: 12px; padding: 25px;">
+                            <div style="background: #95a5a6; height: 120px; width: 100%; border-radius: 8px; margin-bottom: 15px; border: 2px dashed #7f8c8d;"></div>
+                            <div style="background: #2c3e50; height: 25px; width: 180px; margin-bottom: 10px; border-radius: 4px;"></div>
+                            <div style="background: #7f8c8d; height: 60px; width: 100%; margin-bottom: 15px; border-radius: 4px;"></div>
+                            <div style="display: flex; gap: 5px; margin-bottom: 15px;">
+                                <div style="background: #34495e; height: 20px; width: 50px; border-radius: 10px;"></div>
+                                <div style="background: #16a085; height: 20px; width: 50px; border-radius: 10px;"></div>
+                            </div>
+                            <div style="background: #3498db; height: 30px; width: 80px; border-radius: 6px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="annotations">
+                    <div class="annotation-title">Projects Section Elements:</div>
+                    <ul class="annotation-list">
+                        <li>Featured project with larger layout and detailed description</li>
+                        <li>Project screenshots or mockups (optimized images)</li>
+                        <li>Technology tags/badges for quick identification</li>
+                        <li>Live demo and source code links</li>
+                        <li>Project outcomes and key learnings</li>
+                        <li>Responsive card grid layout</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="detailed-section">
+                <h3 style="color: #2c3e50; margin-bottom: 20px;">📞 Contact Section</h3>
+                
+                <div class="component-wireframe">
+                    <div class="component-title">Contact Section Layout</div>
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <div style="background: #2c3e50; height: 35px; width: 150px; margin: 0 auto 10px; border-radius: 4px;"></div>
+                        <div style="background: #7f8c8d; height: 20px; width: 280px; margin: 0 auto; border-radius: 3px;"></div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                        <div>
+                            <div style="background: #3498db; height: 30px; width: 150px; margin-bottom: 20px; border-radius: 4px;"></div>
+                            <div style="display: grid; gap: 20px;">
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="background: #e74c3c; height: 40px; width: 40px; border-radius: 50%;"></div>
+                                    <div style="background: #95a5a6; height: 20px; width: 200px; border-radius: 3px;"></div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="background: #2ecc71; height: 40px; width: 40px; border-radius: 50%;"></div>
+                                    <div style="background: #95a5a6; height: 20px; width: 180px; border-radius: 3px;"></div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div style="background: #f39c12; height: 40px; width: 40px; border-radius: 50%;"></div>
+                                    <div style="background: #95a5a6; height: 20px; width: 160px; border-radius: 3px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 30px;">
+                                <div style="background: #9b59b6; height: 30px; width: 180px; margin-bottom: 15px; border-radius: 4px;"></div>
+                                <div style="display: flex; gap: 15px;">
+                                    <div style="background: #3b5998; height: 40px; width: 40px; border-radius: 8px;"></div>
+                                    <div style="background: #0077b5; height: 40px; width: 40px; border-radius: 8px;"></div>
+                                    <div style="background: #333; height: 40px; width: 40px; border-radius: 8px;"></div>
+                                    <div style="background: #1da1f2; height: 40px; width: 40px; border-radius: 8px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div style="background: #2ecc71; height: 30px; width: 120px; margin-bottom: 20px; border-radius: 4px;"></div>
+                            <div style="background: #f8f9fa; border: 2px dashed #dee2e6; border-radius: 8px; padding: 25px;">
+                                <div style="display: grid; gap: 15px;">
+                                    <div>
+                                        <div style="background: #95a5a6; height: 15px; width: 60px; margin-bottom: 8px; border-radius: 2px;"></div>
+                                        <div style="background: #ecf0f1; height: 40px; width: 100%; border-radius: 6px; border: 1px solid #bdc3c7;"></div>
+                                    </div>
+                                    <div>
+                                        <div style="background: #95a5a6; height: 15px; width: 60px; margin-bottom: 8px; border-radius: 2px;"></div>
+                                        <div style="background: #ecf0f1; height: 40px; width: 100%; border-radius: 6px; border: 1px solid #bdc3c7;"></div>
+                                    </div>
+                                    <div>
+                                        <div style="background: #95a5a6; height: 15px; width: 80px; margin-bottom: 8px; border-radius: 2px;"></div>
+                                        <div style="background: #ecf0f1; height: 100px; width: 100%; border-radius: 6px; border: 1px solid #bdc3c7;"></div>
+                                    </div>
+                                    <div style="background: #2ecc71; height: 45px; width: 120px; border-radius: 6px; margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="annotations">
+                    <div class="annotation-title">Contact Section Components:</div>
+                    <ul class="annotation-list">
+                        <li>Direct contact information (email, phone, location)</li>
+                        <li>Social media profile links with branded icons</li>
+                        <li>Optional contact form for direct inquiries</li>
+                        <li>Professional profile links (LinkedIn, GitHub, etc.)</li>
+                        <li>Clear call-to-action messaging</li>
+                        <li>Accessibility-friendly contact methods</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Flow Diagram -->
+        <div class="wireframe-section">
+            <h2 class="section-title">🔄 User Flow & Navigation</h2>
+            
+            <div class="flow-diagram">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #2c3e50;">Primary User Journey</h3>
+                
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div class="flow-step">Landing Page</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-step">Hero Section</div>
+                    <span class="flow-arrow">→</span>
+                    <div class="flow-step">Navigation Decision</div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+                    <div>
+                        <div class="flow-step" style="background: #3498db;">Learn More</div>
+                        <span class="flow-arrow" style="display: block; margin: 10px 0;">↓</span>
+                        <div class="flow-step" style="background: #2ecc71;">About Section</div>
+                        <span class="flow-arrow" style="display: block; margin: 10px 0;">↓</span>
+                        <div class="flow-step
+                        
+                        <div class="content-section">
+                            <div class="section-header"></div>
+                            <div class="content-grid">
+                                <div class="content-card">
+                                    <div class="card-title"></div>
+                                    <div class="card-content"></div>
+                                    <div class="card-content"></div>
+                                </div>
+                                <div class="content-card">
+                                    <div class="card-title"></div>
+                                    <div class="card-content"></div>
+                                    <div class="card-content"></div>
+                                </div>
+                                <div class="content-card">
+                                    <div class="card-title"></div>
+                                    <div class="card-content"></div>
+                                    <div class="card-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tablet Wireframe -->
+                <div class="device-wireframe tablet-wireframe">
+                    <div class="device-header">📱 Tablet (768px-1023px)</div>
+                    <div class="wireframe-content">
+                        <div class="nav-bar">
+                            <div class="logo-placeholder"></div>
+                            <div class="nav-links">
+                                <div class="nav-link"></div>
+                                <div class="nav-link"></div>
+                                <div class="nav-link"></div>
+                                <div class="nav-link"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-section">
+                            <div class="hero-content">
+                                <div class="profile-image"></div>
+                                <div class="hero-text"></div>
+                                <div class="hero-subtext"></div>
+                                <div class="cta-button"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="content-section">
+                            <div class="section-header"></div>
+                            <div class="content-grid">
+                                <div class="content-card">
+                                    <div class="card-title"></div>
+                                    <div class="card-content"></div>
+                                    <div class="card-content"></div>
+                                </div>
+                                <div class="content-card">
+                                    <div class="card-title"></div>
+                                    <div class="card-content"></div>
+                                    <div class="card-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Wireframe -->
+                <div class="device-wireframe mobile-wireframe">
+                    <div class="device-header">📱 Mobile (320px-767px)</div>
+                    <div class="wireframe-content">
+                        <div class="mobile-nav">
+                            <div class="logo-placeholder"></div>
+                            <div class="hamburger"></div>
+                        </div>
+                        
+                        <div class="hero-section">
+                            <div class="hero-content">
+                                <div class="profile-image"></div>
+                                <div class="hero-text"></div>
+                                <div class="hero-subtext"></div>
+                                <div class="cta-button"></div>
+                            </div>
+                
